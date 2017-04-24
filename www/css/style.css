@@ -1,0 +1,48 @@
+#graphArea {
+}
+
+#graph {
+    border: solid 1px #000000;
+}
+
+#beaconArea {
+    position: relative;
+    margin: 10px 10px;
+}
+
+#beaconLabel {
+    width: 200px;
+    font-size: 2.0em;
+    margin: 10px 10px;
+}
+
+#beaconArea .beacon {
+    border: 10px solid rgb(0, 255, 255);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    height: 0;
+    left: 150px;
+    position: absolute;
+    top: 150px;
+    width: 0;
+    -webkit-animation-name: beacon;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+}
+@-webkit-keyframes beacon {
+    0% {
+        border-color: rgba(0, 255, 255, 1);
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        padding: 0;
+    }
+    100% {
+        border-color: rgba(0, 255, 255, 0);
+        border-radius: 150px;
+        -webkit-border-radius: 150px;
+        left: 0px;
+        padding: 150px;
+        top: 0px;
+    }
+}

@@ -1,0 +1,29 @@
+<ons-page ng-controller="LoginController as login">
+
+  <ons-toolbar>
+    <div class="center">ログイン</div>
+  </ons-toolbar>
+  <p></p>
+
+  <ons-list>
+    <ons-list-item>
+      メールアドレス
+    </ons-list-item>
+    <ons-list-item>
+        <ons-input modifier="underbar" ng-model="login.mail" placeholder="メールアドレス" float></ons-input>@ef-4.co.jp
+    </ons-list-item>
+    <ons-list-item>
+      パスワード
+    </ons-list-item>
+    <ons-list-item>
+        <ons-input modifier="underbar" ng-model="login.password" placeholder="password" type="password" float></ons-input>
+    </ons-list-item>
+    <ons-list-item>
+    <ons-button modifier="large" ng-click="login.login(false)">ログイン</ons-button>
+    </ons-list-item>
+    <ons-list-item>
+    <ons-button modifier="large" ng-click="login.login(true)">匿名ログイン</ons-button>
+    </ons-list-item>
+  </ons-list>
+
+</ons-page>

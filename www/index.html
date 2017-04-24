@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  
+  <script src="components/loader.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <script src="lib/onsenui/js/angular-onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/angular-googleapi.js"></script>
+  <script src="https://apis.google.com/js/client.js"></script>
+  <script src="js/controller/app.js"></script>
+  <script src="js/controller/tab.js"></script>
+  <script src="js/controller/home.js"></script>
+  <script src="js/controller/calendar.js"></script>
+  <script src="js/controller/kintai.js"></script>
+  <script src="js/controller/settings.js"></script>
+  <script src="js/controller/about.js"></script>
+  <script src="js/controller/login.js"></script>
+    
+ 
+</head>
+
+<body ng-controller="AppController as app">
+<ons-splitter var="splitter" ng-show="app.isLogin()">
+<ons-splitter-side var="left" side="left" width="150px" collapse swipeable page="view/menu.html">
+</ons-splitter-side>
+<ons-splitter-content var="content" page="tabnav.html">
+</ons-splitter-content>
+</ons-splitter>
+
+<ons-template id="tabnav.html">
+<ons-navigator var="tabNavigator" page="tabbar.html" ng-controller="TabController as tab">
+</ons-navigator> 
+</ons-template>
+
+<ons-template id="tabbar.html">
+  <ons-tabbar var="tabbar" ons-postchange="app.tabchange($event);">
+    <ons-tab page="view/home.html" label="ホーム" icon="ion-home" active="true"></ons-tab>
+    <!--ons-tab page="view/calendar.html" label="カレンダー" icon="ion-ios-pricetag"></ons-tab-->
+    <ons-tab page="view/kintai.html" label="勤怠管理" icon="ion-chatbox-working"></ons-tab>
+  </ons-tabbar>
+</ons-template>
+
+<ons-navigator var="loginNavigator" page="view/login.html" ng-hide="app.isLogin()">
+</ons-navigator> 
+
+</body>
+</html>
