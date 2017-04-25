@@ -1,17 +1,6 @@
-myapp.controller('AppController', ['$scope', '$interval', 'googleLogin', 'googleCalendar', 'googlePlus', function($scope, $interval, googleLogin, googleCalendar, googlePlus) {
+myapp.controller('AppController', ['$scope', '$interval', function($scope, $interval) {
 
     this.currentTab = 0;
-
-    this.isLogin = function() {
-        var user = firebase.auth().currentUser;
-        if(user) {
-            // console.log("AppController isLogin true.");
-            return true;
-        } else {
-            // console.log("AppController isLogin false.");
-            return false;
-        }
-    };
 
     this.load = function(page) {
         console.log("AppController loading " + page);
@@ -36,22 +25,6 @@ myapp.controller('AppController', ['$scope', '$interval', 'googleLogin', 'google
     this.tabchange = function($event) {
         console.log("AppController tabchange is called tabid = " + $event.index);
         this.currentTab = $event.index;
-        // var user = null;
-        // var userStr = localStorage.getItem('user');
-        // if(userStr != null) {
-        //     user = eval('(' + userStr + ')');
-        //     console.log(user);
-        //     $scope.user = user;
-        //     this.test = 'test2';
-        // }
-        // if(user == null){
-        //     $scope.splitter.content.load('view/login.html');
-        // }
-        // if($event.index == 1) {
-        //     googleCalendar.listCalendars().then(function(response) {
-        //         console.log(response);
-        //     });
-        // }
     };
     
     // this.currentUser = googleLogin.currentUser;
@@ -64,23 +37,6 @@ myapp.controller('AppController', ['$scope', '$interval', 'googleLogin', 'google
     };
     
     ons.ready(function() {
-        // console.log("googleLogin = " + googleLogin);
-/**        
-        firebase.auth().onAuthStateChanged(function(user) {
-            console.log("firebase.auth().onAuthStateChanged!");
-          if (user) {
-            console.log("login uid = " + user.uid);
-            // ホーム画面に遷移
-            // $scope.isLogin = true;
-            // $scope.splitter.content.load('view/home.html');
-          } else {
-            console.log("not logged in.");
-            // ログイン画面に遷移
-            // $scope.isLogin = false;
-            // $scope.splitter.content.load('view/login.html');
-          } 
-        });
-**/        
         console.log("AppController is ready!");
     });
     

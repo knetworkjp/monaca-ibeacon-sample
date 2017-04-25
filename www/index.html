@@ -32,7 +32,7 @@
 </head>
 
 <body ng-controller="AppController as app">
-<ons-splitter var="splitter" ng-show="app.isLogin()">
+<ons-splitter var="splitter">
 <ons-splitter-side var="left" side="left" width="150px" collapse swipeable page="view/menu.html">
 </ons-splitter-side>
 <ons-splitter-content var="content" page="tabnav.html">
@@ -47,13 +47,9 @@
 <ons-template id="tabbar.html">
   <ons-tabbar var="tabbar" ons-postchange="app.tabchange($event);">
     <ons-tab page="view/home.html" label="ホーム" icon="ion-home" active="true"></ons-tab>
-    <!--ons-tab page="view/calendar.html" label="カレンダー" icon="ion-ios-pricetag"></ons-tab-->
-    <ons-tab page="view/kintai.html" label="勤怠管理" icon="ion-chatbox-working"></ons-tab>
+    <ons-tab page="view/kintai.html" label="入退室履歴" icon="ion-chatbox-working"></ons-tab>
   </ons-tabbar>
 </ons-template>
-
-<ons-navigator var="loginNavigator" page="view/login.html" ng-hide="app.isLogin()">
-</ons-navigator> 
 
 </body>
 </html>

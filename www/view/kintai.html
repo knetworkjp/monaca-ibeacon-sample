@@ -3,48 +3,16 @@
     <div class="left">
      <ons-toolbar-button ng-click="app.toggle();"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
     </div>
-    <div class="center">勤怠管理</div>
+    <div class="center">入退出履歴</div>
   </ons-toolbar>
 
   <ons-scroller>
   <ons-list>
-    <ons-list-header>勤務時間</ons-list-header>
-    <ons-list-item>
+    <ons-list-item ng-repeat="item in items">
       <ons-row>
-        <ons-col width="100px">{{totalWorkdays}}</ons-col>
-        <ons-col>日</ons-col>
-      </ons-row>
-      <ons-row>
-        <ons-col width="100px">{{totalWorktime}}</ons-col>
-        <ons-col>時間</ons-col>
-      </ons-row>
-    </ons-list-item>
-    <ons-list-header>休憩時間</ons-list-header>
-    <ons-list-item>
-      <ons-row>
-        <ons-col width="100px">{{totalBreaktime}}</ons-col>
-        <ons-col>時間</ons-col>
-      </ons-row>
-    </ons-list-item>
-    <ons-list-header>残業時間</ons-list-header>
-    <ons-list-item>
-      <ons-row>
-        <ons-col width="100px">{{totalOvertime}}</ons-col>
-        <ons-col>時間</ons-col>
-      </ons-row>
-    </ons-list-item>
-    <ons-list-header>遅刻回数</ons-list-header>
-    <ons-list-item>
-      <ons-row>
-        <ons-col width="100px">{{totalLate}}</ons-col>
-        <ons-col>回</ons-col>
-      </ons-row>
-    </ons-list-item>
-    <ons-list-header>早退回数</ons-list-header>
-    <ons-list-item>
-      <ons-row>
-        <ons-col width="100px">{{totalLeaveEarly}}</ons-col>
-        <ons-col>回</ons-col>
+        <ons-col width="80px">{{item.name}}</ons-col>
+        <ons-col width="80px">{{item.type}}</ons-col>
+        <ons-col width="100px">{{item.timestr}}</ons-col>
       </ons-row>
     </ons-list-item>
   </ons-list>

@@ -28,19 +28,29 @@
     </ons-col>
   </ons-row>
   <ons-row align="center">
-    <ons-col width="5%">
+    <ons-col width="5%"></ons-col>
+    <ons-col width="11%">0</ons-col>
+    <ons-col width="11%">3</ons-col>
+    <ons-col width="11%">6</ons-col>
+    <ons-col width="11%">9</ons-col>
+    <ons-col width="11%">12</ons-col>
+    <ons-col width="10%">15</ons-col>
+    <ons-col width="10%">18</ons-col>
+    <ons-col width="10%">21</ons-col>
+    <ons-col width="10%">24</ons-col>
+  </ons-row>
+  <ons-row align="center">
+    <ons-col width="10%">
       <div>
       </div>
     </ons-col>
-    <ons-col width="90%">
+    <ons-col width="80%">
       <div id="legendArea">
-      <br/>
-      ■：Room1<br/>
-      ■：Room2<br/>
-      ■：Room3<br/>
+      <font color="red">■</font>：Room1<br/>
+      <font color="lightgreen">■</font>：Room2<br/>
       </div>
     </ons-col>
-    <ons-col width="5%">
+    <ons-col width="10%">
       <div>
       </div>
     </ons-col>
@@ -54,8 +64,10 @@
       <div id="beaconArea">
         <div class="beacon"/>
         <div id="beaconLabel"/>
-        {{label}}<br/>
-        {{rssi}}
+        <br/>
+        {{status}}({{name}})<br/>
+        RSSI:{{rssi}} dBm<br/>
+        <!--近接度：{{proximity}}<br/-->
         </div>      
       </div>
     </ons-col>
